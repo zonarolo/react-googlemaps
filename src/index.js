@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Map from './Map.js';
 import * as serviceWorker from './serviceWorker';
+import credentials from './credentials';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Map
+      googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&key=${credentials.mapsKey}`}
+      containerElement={<div style={{height: '400px'}} />}
+      mapElement={<div style={{height: '100vh'}} /> }
+      loadingElement={<p>Cargando</p>}
+    />
   </React.StrictMode>,
   document.getElementById('root')
 );
